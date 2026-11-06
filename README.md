@@ -879,6 +879,47 @@ section {
     padding-right: 16px !important;
   }
 }
+  /* NAWARASA EDGE-TO-EDGE LAYOUT */
+
+html {
+  width: 100% !important;
+  min-height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff8ed !important;
+}
+
+body {
+  width: 100% !important;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff8ed !important;
+  overflow-x: hidden;
+}
+
+main,
+header,
+footer,
+.announcement,
+.hero,
+.trust-row,
+.contact,
+section {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: clamp(16px, 3vw, 48px) !important;
+  padding-right: clamp(16px, 3vw, 48px) !important;
+}
 </style>
 </head>
 
