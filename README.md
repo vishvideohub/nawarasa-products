@@ -755,6 +755,41 @@ footer{
   .product-image-wrap{height:210px}
   .trust-item{font-size:8px}
 }
+  /* NAWARASA FULL WIDTH FIX */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: clamp(16px, 3vw, 48px) !important;
+  padding-right: clamp(16px, 3vw, 48px) !important;
+}
+
+.hero-grid {
+  width: 100%;
+}
+
+.products {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
 </style>
 </head>
 
