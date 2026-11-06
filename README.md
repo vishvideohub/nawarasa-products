@@ -827,6 +827,58 @@ main, header, footer, section {
     padding-right: 15px !important;
   }
 }
+  /* NAWARASA FULL WIDTH FINAL FIX */
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff8ed !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.announcement,
+header,
+main,
+footer,
+.hero,
+.trust-row,
+.contact,
+section {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: clamp(16px, 3vw, 48px) !important;
+  padding-right: clamp(16px, 3vw, 48px) !important;
+}
+
+.hero-grid,
+.products,
+.trust-grid,
+.about-grid,
+.order-steps {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
 </style>
 </head>
 
