@@ -37,7 +37,13 @@ button,input,textarea,select{font:inherit}
 button,a{-webkit-tap-highlight-color:transparent}
 a{color:inherit;text-decoration:none}
 button{cursor:pointer}
-.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.container{
+  width:100%;
+  max-width:none;
+  margin:0;
+  padding-left:clamp(16px,3vw,48px);
+  padding-right:clamp(16px,3vw,48px);
+}
 
 .announcement{
   background:var(--ink);
@@ -673,7 +679,10 @@ footer{
   .product-image-wrap{height:230px}
 }
 @media(max-width:700px){
-  .container{width:min(100% - 30px,540px)}
+  .container{
+  width:100%;
+  max-width:none;
+}
   .nav{height:68px}
   .brand{min-width:0}
   .brand-mark{width:39px;height:39px}
