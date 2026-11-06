@@ -790,6 +790,43 @@ body {
     padding-right: 16px !important;
   }
 }
+/* FINAL FULL SCREEN FIX */
+
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: clamp(15px, 3vw, 48px) !important;
+  padding-right: clamp(15px, 3vw, 48px) !important;
+}
+
+main, header, footer, section {
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero-grid,
+.products,
+.trust-grid,
+.about-grid,
+.order-steps {
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
 </style>
 </head>
 
