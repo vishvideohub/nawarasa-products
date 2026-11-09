@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<!--
+  නවරස Products
+  ------------------------------------------------------------------
+  Colours are semantic tokens declared once at the top of <style>.
+  Light lives on :root. Dark is declared TWICE on purpose — once for
+  the OS preference and once for the explicit override — so edit both.
+  Photos live in img/ and are cached for a year by _headers.
+-->
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta id="metaThemeColor" name="theme-color" content="#faf6ef">
+
+<title>නවරස Products | වටලප්පන්, පුඩිං සහ අයිස් පැකට්</title>
+<meta name="description" content="නවරස Products — ආදරයෙන් සකස් කළ වටලප්පන්, කැරමල් පුඩිං, ජෙලි පුඩිං සහ අයිස් පැකට්. WhatsApp හරහා පහසුවෙන් ඇණවුම් කරන්න.">
+<link rel="canonical" href="https://nawarasa.pages.dev/">
+<meta name="robots" content="index,follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="නවරස Products">
+<meta property="og:locale" content="si_LK">
+<meta property="og:url" content="https://nawarasa.pages.dev/">
+<meta property="og:title" content="නවරස Products | හැම රසයකම ආදරය">
+<meta property="og:description" content="වටලප්පන්, පුඩිං සහ සිසිල් අයිස් පැකට් — WhatsApp හරහා ඇණවුම් කරන්න.">
+<meta property="og:image" content="https://nawarasa.pages.dev/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="නවරස Products අතුරුපස එකතුව">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1310'/%3E%3Cpath d='M6 21c0-5.5 4.5-10 10-10s10 4.5 10 10z' fill='%23d9a84e'/%3E%3Crect x='4' y='21' width='24' height='3.4' rx='1.7' fill='%23c2703d'/%3E%3Ccircle cx='16' cy='8' r='2' fill='%23d9a84e'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@700;800&family=Noto+Sans+Sinhala:wght@400;500;600&family=DM+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+<script>
+(function(){
+  try{
+    var s = localStorage.getItem("nawarasa-theme");
+    if(s === "dark" || s === "light") document.documentElement.setAttribute("data-theme", s);
+  }catch(e){}
+  var dark = document.documentElement.getAttribute("data-theme") === "dark" ||
+    (!document.documentElement.hasAttribute("data-theme") &&
+      window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  var m = document.getElementById("metaThemeColor");
+  if(m) m.setAttribute("content", dark ? "#15110e" : "#faf6ef");
+})();
+</script>
+
+<style>
+/* =============================================================
+   1 · TOKENS
+   ============================================================= */
+:root{
+  color-scheme: light;
+
+  --paper:#faf6ef;
+  --surface:#fffdf9;
+  --surface-2:#f3eadb;
+  --sunken:#efe6d6;
+
+  --ink:#1a1310;
+  --ink-soft:#5e5048;
+  --ink-faint:#806d5e;
+
+  --line:#e6dccb;
+  --line-strong:#d6c8b2;
+
+  --amber:#8f4a22;          /* accent for TEXT — clears 4.5:1 on paper, surface AND sunken */
+  --amber-vivid:#c2703d;    /* accent for FILLS */
+  --gold:#d9a84e;
+  --gold-soft:#f2e2bf;
+  --on-amber:#fffdf9;
+
+  --forest:#1f4d3a;
+  --forest-soft:#e4ede8;
+
+  --deep:#1a1310;           /* inverted panels */
+  --deep-2:#2a1e18;
+  --on-deep:#f7efe4;
+  --on-deep-soft:#c9b6a2;
+  --deep-line:rgba(247,239,228,.17);
+  --deep-fill:rgba(247,239,228,.07);
+
+  --wa:#137a4d;
+  --wa-2:#0f6340;
+  --on-wa:#ffffff;
+  --badge:#8f4a22;
+  --on-badge:#ffffff;
+  --danger:#ad2a22;
+
+  --ring:#8f4a22;
+  --grain:.035;
+
+  --sh-1:0 1px 2px rgba(40,24,14,.05), 0 2px 8px rgba(40,24,14,.05);
+  --sh-2:0 2px 4px rgba(40,24,14,.05), 0 10px 28px rgba(40,24,14,.09);
+  --sh-3:0 4px 10px rgba(40,24,14,.07), 0 24px 60px rgba(40,24,14,.14);
+
+  --header-h:80px;
+  --r-sm:10px; --r-md:16px; --r-lg:24px;
+  --bezier:cubic-bezier(.22,.72,.26,1);
+}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --paper:#15110e; --surface:#1e1915; --surface-2:#28211b; --sunken:#100d0b;
+    --ink:#f4ede3; --ink-soft:#bca996; --ink-faint:#9c8876;
+    --line:#332a22; --line-strong:#4a3b2f;
+    --amber:#e3a066; --amber-vivid:#ce8449; --gold:#e3bc7a; --gold-soft:#3a2c1c; --on-amber:#1a1008;
+    --forest:#4f9b78; --forest-soft:#1b2b23;
+    --deep:#0d0a08; --deep-2:#1a1310; --on-deep:#f4ede3; --on-deep-soft:#bca996;
+    --deep-line:rgba(244,237,227,.14); --deep-fill:rgba(244,237,227,.055);
+    --wa:#25d366; --wa-2:#1fb257; --on-wa:#0d2a1b;
+    --badge:#e3a066; --on-badge:#1a1008;
+    --danger:#f09a93;
+    --ring:#e3a066; --grain:.05;
+    --sh-1:0 1px 2px rgba(0,0,0,.4), 0 2px 8px rgba(0,0,0,.3);
+    --sh-2:0 2px 4px rgba(0,0,0,.4), 0 10px 28px rgba(0,0,0,.45);
+    --sh-3:0 4px 10px rgba(0,0,0,.45), 0 24px 60px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --paper:#15110e; --surface:#1e1915; --surface-2:#28211b; --sunken:#100d0b;
+  --ink:#f4ede3; --ink-soft:#bca996; --ink-faint:#9c8876;
+  --line:#332a22; --line-strong:#4a3b2f;
+  --amber:#e3a066; --amber-vivid:#ce8449; --gold:#e3bc7a; --gold-soft:#3a2c1c; --on-amber:#1a1008;
+  --forest:#4f9b78; --forest-soft:#1b2b23;
+  --deep:#0d0a08; --deep-2:#1a1310; --on-deep:#f4ede3; --on-deep-soft:#bca996;
+  --deep-line:rgba(244,237,227,.14); --deep-fill:rgba(244,237,227,.055);
+  --wa:#25d366; --wa-2:#1fb257; --on-wa:#0d2a1b;
+  --badge:#e3a066; --on-badge:#1a1008;
+  --danger:#f09a93;
+  --ring:#e3a066; --grain:.05;
+  --sh-1:0 1px 2px rgba(0,0,0,.4), 0 2px 8px rgba(0,0,0,.3);
+  --sh-2:0 2px 4px rgba(0,0,0,.4), 0 10px 28px rgba(0,0,0,.45);
+  --sh-3:0 4px 10px rgba(0,0,0,.45), 0 24px 60px rgba(0,0,0,.6);
+}
+
+/* =============================================================
+   2 · BASE
+   ============================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:calc(var(--header-h) + 20px);
+  scrollbar-gutter:stable;
+  -webkit-text-size-adjust:100%;
+}
+html.is-locked{overflow:hidden}
+body{
+  margin:0; min-width:320px; overflow-x:hidden;
+  background:var(--paper); color:var(--ink);
+  font-family:'Noto Sans Sinhala','DM Sans',system-ui,sans-serif;
+  font-size:clamp(15.5px,.38vw + 14.6px,17px);
+  line-height:1.82;
+  -webkit-font-smoothing:antialiased;
+}
+/* Film grain — keeps flat colour fields from looking plasticky. */
+body::after{
+  content:""; position:fixed; inset:0; z-index:200; pointer-events:none;
+  opacity:var(--grain);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+body,button,input,textarea,select{font-family:inherit}
+button{cursor:pointer;font:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+p{margin:0;text-wrap:pretty}
+
+.display{
+  font-family:'Abhaya Libre','Noto Serif Sinhala',Georgia,serif;
+  font-weight:700; line-height:1.3; letter-spacing:-.005em;
+  text-wrap:balance; margin:0;
+}
+h1,h2,h3{margin:0}
+.label{
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:12px; font-weight:600; letter-spacing:.2em; text-transform:uppercase;
+  line-height:1.5;
+}
+.num{font-family:'DM Sans',system-ui,sans-serif;font-variant-numeric:tabular-nums}
+
+:where(a,button,input,textarea,select,[tabindex]):focus-visible{
+  outline:2px solid var(--ring); outline-offset:3px; border-radius:6px;
+}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.skip{
+  position:fixed;top:10px;left:10px;z-index:300;padding:13px 20px;border-radius:10px;
+  background:var(--ink);color:var(--paper);font-size:14px;font-weight:600;
+  transform:translateY(-200%);transition:transform .2s;
+}
+.skip:focus{transform:translateY(0)}
+.icon{width:1.25em;height:1.25em;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.icon-solid{fill:currentColor;stroke:none}
+
+.shell{width:100%;max-width:1520px;margin-inline:auto;padding-inline:clamp(20px,4.5vw,72px)}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+
+/* =============================================================
+   3 · ANNOUNCEMENT + HEADER
+   ============================================================= */
+.announcement{
+  position:relative;z-index:50;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:11px 48px 11px 20px;
+  background:var(--deep);color:var(--on-deep-soft);
+  font-size:13px;text-align:center;
+}
+.announcement b{color:var(--gold);font-weight:600}
+.announcement[hidden]{display:none}
+.ann-close{
+  position:absolute;right:10px;top:50%;translate:0 -50%;
+  width:36px;height:36px;display:grid;place-items:center;
+  border:0;border-radius:9px;background:transparent;color:inherit;opacity:.7;
+}
+.ann-close:hover{opacity:1;background:var(--deep-fill)}
+
+/* Floats over the hero, then solidifies. Negative margin pulls the hero up
+   behind it so the dark photo runs to the very top of the page. */
+.site-header{
+  position:sticky; top:0; z-index:40;
+  margin-bottom:calc(-1 * var(--header-h));
+  color:var(--on-deep);
+  --hdr-line:rgba(255,255,255,.22);
+  --hdr-fill:rgba(255,255,255,.08);
+  transition:background .35s var(--bezier), border-color .35s, color .35s;
+  border-bottom:1px solid transparent;
+}
+.site-header.is-stuck{
+  color:var(--ink);
+  --hdr-line:var(--line-strong);
+  --hdr-fill:var(--surface);
+  background:color-mix(in srgb, var(--paper) 86%, transparent);
+  backdrop-filter:blur(20px) saturate(1.4);
+  border-bottom-color:var(--line);
+  box-shadow:var(--sh-1);
+}
+@supports not (background: color-mix(in srgb, red, blue)){
+  .site-header.is-stuck{background:var(--paper)}
+}
+.nav{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:13px;flex-shrink:0}
+.brand-logo{
+  width:50px;height:50px;flex:0 0 50px;object-fit:cover;border-radius:50%;
+  border:1.5px solid var(--hdr-line);background:var(--surface);
+  transition:transform .5s var(--bezier),border-color .35s;
+}
+.brand:hover .brand-logo{transform:scale(1.06)}
+.brand-text{display:flex;flex-direction:column;gap:3px}
+.brand-name{font-family:'Abhaya Libre',Georgia,serif;font-weight:700;font-size:21px;line-height:1}
+.brand-sub{font-size:9.5px;letter-spacing:.22em;opacity:.72;font-weight:600}
+
+.nav-links{display:flex;align-items:center;gap:clamp(14px,2vw,32px);font-size:14.5px;font-weight:500}
+.nav-links a{position:relative;padding-block:8px;opacity:.82;transition:opacity .2s}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:0;bottom:2px;height:1.5px;
+  background:currentColor;scale:0 1;transform-origin:left;
+  transition:scale .3s var(--bezier);
+}
+.nav-links a:hover{opacity:1}
+.nav-links a:hover::after,.nav-links a[aria-current]::after{scale:1 1}
+.nav-links a[aria-current]{opacity:1}
+
+.nav-actions{display:flex;align-items:center;gap:9px}
+.hbtn{
+  min-height:46px;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:0 16px;border:1px solid var(--hdr-line);border-radius:var(--r-sm);
+  background:transparent;color:inherit;font-size:13.5px;font-weight:600;
+  transition:background .22s,border-color .22s,transform .15s var(--bezier);
+}
+.hbtn:hover{background:var(--hdr-fill)}
+.hbtn:active{transform:scale(.97)}
+.hbtn.square{width:46px;padding:0}
+.hbtn.solid{
+  background:var(--gold);border-color:var(--gold);color:#241a10;
+}
+.hbtn.solid:hover{filter:brightness(1.06);background:var(--gold)}
+.cart-dot{
+  display:inline-grid;place-items:center;min-width:21px;height:21px;padding-inline:6px;
+  border-radius:99px;background:var(--badge);color:var(--on-badge);
+  font:600 11.5px/1 'DM Sans',sans-serif;
+}
+.cart-dot[data-empty="true"]{background:var(--hdr-fill);color:inherit;opacity:.7}
+.menu-btn{display:none}
+
+.theme-btn{position:relative;overflow:hidden}
+.theme-btn .icon{position:absolute;transition:rotate .5s var(--bezier),scale .5s var(--bezier),opacity .3s}
+.theme-btn .i-sun{rotate:0deg;scale:1;opacity:1}
+.theme-btn .i-moon{rotate:-70deg;scale:.4;opacity:0}
+:root[data-theme="dark"] .theme-btn .i-sun{rotate:70deg;scale:.4;opacity:0}
+:root[data-theme="dark"] .theme-btn .i-moon{rotate:0deg;scale:1;opacity:1}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .theme-btn .i-sun{rotate:70deg;scale:.4;opacity:0}
+  :root:not([data-theme="light"]) .theme-btn .i-moon{rotate:0deg;scale:1;opacity:1}
+}
+
+/* =============================================================
+   4 · HERO
+   The hero photo is a promotional graphic with its own baked-in
+   lettering, so it is framed as a poster rather than bled behind
+   the copy — text over it is unreadable and fights its wordmark.
+   ============================================================= */
+.hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  padding-top:var(--header-h);
+  background:var(--deep);color:var(--on-deep);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(72% 90% at 80% 28%, color-mix(in srgb,var(--amber-vivid) 24%,transparent), transparent 62%),
+    radial-gradient(60% 80% at 2% 95%, rgba(31,77,58,.26), transparent 60%);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.02fr .98fr;
+  align-items:center;gap:clamp(40px,5vw,84px);
+  padding-block:clamp(52px,6.5vw,96px);
+}
+.hero-copy{max-width:62ch}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;margin-bottom:22px;
+  color:var(--gold);white-space:nowrap;
+}
+.eyebrow::before{content:"";width:36px;height:1px;background:currentColor;opacity:.55}
+.hero h1{font-size:clamp(40px,5.4vw,80px);line-height:1.2;letter-spacing:-.02em;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-copy > p{margin-top:24px;max-width:48ch;color:var(--on-deep-soft);font-size:16.5px;line-height:1.95}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{
+  min-height:54px;padding:15px 26px;border:1px solid transparent;border-radius:var(--r-sm);
+  display:inline-flex;align-items:center;justify-content:center;gap:11px;
+  font-size:15px;font-weight:600;
+  transition:transform .22s var(--bezier),filter .22s,background .22s,border-color .22s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn-primary{background:var(--gold);color:#241a10}
+.btn-primary:hover{filter:brightness(1.07)}
+.btn-ghost{border-color:var(--deep-line);background:var(--deep-fill);color:var(--on-deep)}
+.btn-ghost:hover{background:color-mix(in srgb,var(--on-deep) 13%,transparent)}
+.hero-foot{
+  display:flex;align-items:flex-start;gap:10px;margin-top:26px;
+  color:var(--on-deep-soft);font-size:13.5px;
+}
+.hero-foot .icon{width:17px;height:17px;margin-top:4px;color:var(--gold);flex:none}
+
+.hero-figure{position:relative;margin:0;padding:16px 16px 0 0}
+.hero-figure img{
+  width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
+  border-radius:var(--r-lg);box-shadow:0 32px 80px rgba(0,0,0,.5);
+}
+.hero-figure::before{
+  content:"";position:absolute;right:0;top:0;width:74%;aspect-ratio:1.25;z-index:-1;
+  border:1px solid color-mix(in srgb,var(--gold) 34%,transparent);
+  border-radius:var(--r-lg);
+}
+
+/* Marquee */
+.marquee{
+  overflow:hidden;border-block:1px solid var(--line);
+  background:var(--surface);
+  padding-block:16px;
+}
+.marquee-track{
+  display:flex;width:max-content;gap:42px;
+  animation:slide 38s linear infinite;
+}
+.marquee-track span{
+  display:inline-flex;align-items:center;gap:42px;
+  font-family:'Abhaya Libre',Georgia,serif;font-size:22px;font-weight:700;
+  color:var(--ink-faint);white-space:nowrap;
+}
+.marquee-track span::after{content:"✦";color:var(--gold);font-size:13px}
+@keyframes slide{to{translate:-50% 0}}
+
+/* =============================================================
+   5 · TRUST STRIP
+   ============================================================= */
+.trust{background:var(--paper)}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);padding-block:34px}
+.trust-item{display:flex;align-items:flex-start;gap:15px;padding-inline:clamp(0px,2vw,34px)}
+.trust-item + .trust-item{border-left:1px solid var(--line)}
+.trust-item:first-child{padding-left:0}
+.trust-icon{
+  width:42px;height:42px;flex:none;display:grid;place-items:center;
+  border-radius:50%;border:1px solid var(--line-strong);color:var(--amber);
+}
+.trust-icon .icon{width:19px;height:19px}
+.trust-item strong{display:block;font-size:15px;font-weight:600;margin-bottom:2px}
+.trust-item span{display:block;color:var(--ink-soft);font-size:13.5px;line-height:1.65}
+
+/* =============================================================
+   6 · SECTIONS
+   ============================================================= */
+.section{padding-block:clamp(72px,8vw,124px)}
+.section-head{display:grid;gap:14px;max-width:62ch;margin-bottom:clamp(40px,4vw,60px)}
+.section-head .label{color:var(--amber)}
+.section-head h2{font-size:clamp(30px,3.6vw,52px)}
+.section-head p{color:var(--ink-soft);font-size:16.5px}
+.section-head.center{margin-inline:auto;justify-items:center;text-align:center}
+
+.products{background:var(--surface)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.filter{
+  min-height:44px;padding:10px 20px;border:1px solid var(--line-strong);border-radius:99px;
+  background:transparent;color:var(--ink-soft);font-size:14px;font-weight:500;
+  transition:background .22s,color .22s,border-color .22s;
+}
+.filter:hover{border-color:var(--ink-faint);color:var(--ink)}
+.filter[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+
+.product-grid{display:grid;gap:clamp(18px,2vw,30px);grid-template-columns:repeat(auto-fit,minmax(265px,1fr))}
+.card{
+  display:flex;flex-direction:column;
+  background:transparent;
+  transition:transform .4s var(--bezier);
+}
+.card:hover{transform:translateY(-6px)}
+.card-media{
+  position:relative;aspect-ratio:3/2;overflow:hidden;
+  border-radius:var(--r-md);background:var(--surface-2);
+  box-shadow:var(--sh-1);
+}
+.card-media img{width:100%;height:100%;object-fit:cover;transition:scale .7s var(--bezier)}
+.card:hover .card-media img{scale:1.05}
+.card-index{
+  position:absolute;left:14px;top:14px;
+  width:34px;height:34px;display:grid;place-items:center;border-radius:50%;
+  background:color-mix(in srgb,var(--surface) 90%,transparent);
+  backdrop-filter:blur(8px);
+  color:var(--ink);font:600 12px/1 'DM Sans',sans-serif;
+}
+.card-tag{
+  position:absolute;right:14px;top:14px;padding:7px 13px;border-radius:99px;
+  background:color-mix(in srgb,var(--surface) 90%,transparent);
+  backdrop-filter:blur(8px);
+  color:var(--amber);font-size:12px;font-weight:600;
+}
+.card-body{display:flex;flex-direction:column;flex:1;padding-top:18px}
+.card-body h3{font-family:'Abhaya Libre',Georgia,serif;font-size:23px;font-weight:700;line-height:1.3;margin-bottom:7px}
+.card-body > p{color:var(--ink-soft);font-size:14.5px;line-height:1.75;margin-bottom:18px}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;
+  padding-top:16px;border-top:1px solid var(--line)}
+.price{color:var(--ink);font-size:15px;font-weight:600}
+.price[data-ask="true"]{color:var(--ink-faint);font-size:14px;font-weight:500}
+.add-btn{
+  min-height:44px;padding:10px 18px;border:1px solid var(--ink);border-radius:99px;
+  background:transparent;color:var(--ink);font-size:13.5px;font-weight:600;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:background .22s,color .22s;
+}
+.add-btn:hover{background:var(--ink);color:var(--paper)}
+.stepper{
+  display:flex;align-items:center;gap:2px;
+  border:1px solid var(--line-strong);border-radius:99px;padding:3px;
+}
+.stepper button{width:38px;height:38px;display:grid;place-items:center;border:0;border-radius:50%;background:transparent}
+.stepper button:hover{background:var(--surface-2)}
+.stepper output{min-width:26px;text-align:center;font:600 14.5px/1 'DM Sans',sans-serif}
+
+.no-results{display:none;padding:56px 20px;text-align:center;color:var(--ink-soft)}
+.no-results.show{display:block}
+
+.callout{
+  margin-top:clamp(34px,4vw,56px);padding:clamp(28px,3.5vw,46px);
+  border-radius:var(--r-lg);background:var(--deep);color:var(--on-deep);
+  display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+}
+.callout h3{font-family:'Abhaya Libre',Georgia,serif;font-size:clamp(22px,2.4vw,32px);font-weight:700;margin-bottom:8px}
+.callout p{color:var(--on-deep-soft);font-size:15px;max-width:54ch}
+.wa-btn{
+  min-height:52px;padding:14px 24px;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  border:0;border-radius:var(--r-sm);background:var(--wa);color:var(--on-wa);
+  font-size:15px;font-weight:600;
+  transition:filter .22s,transform .22s var(--bezier);
+}
+.wa-btn:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.wa-btn.alt{background:var(--wa-2)}
+
+/* =============================================================
+   7 · STORY
+   ============================================================= */
+.story{background:var(--sunken)}
+.story-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(40px,6vw,96px);align-items:center}
+/* 3:2 matches the source photo, so nothing is cropped or blown up. */
+.story-art{position:relative;padding:18px 0 54px}
+.story-art img{
+  position:relative;z-index:1;
+  width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;
+  border-radius:var(--r-lg);box-shadow:var(--sh-3);
+}
+.story-art::before{
+  content:"";position:absolute;z-index:0;right:-18px;top:0;width:48%;aspect-ratio:1;
+  border:1px solid var(--line-strong);border-radius:var(--r-lg);
+}
+.story-quote{
+  position:absolute;z-index:2;left:26px;bottom:0;max-width:330px;
+  padding:24px 26px;border-radius:var(--r-md);
+  background:var(--surface);box-shadow:var(--sh-2);
+}
+.story-quote .label{letter-spacing:.15em;white-space:nowrap}
+.story-quote p{font-family:'Abhaya Libre',Georgia,serif;font-size:19px;font-weight:700;line-height:1.5}
+.story-quote .label{color:var(--amber);margin-bottom:10px}
+.story-copy h2{font-size:clamp(30px,3.6vw,52px);margin-block:14px 20px}
+.story-copy p + p{margin-top:16px}
+.story-copy p{color:var(--ink-soft);font-size:16.5px}
+.story-points{display:grid;gap:2px;margin-top:32px;border-top:1px solid var(--line)}
+.story-point{display:flex;align-items:center;gap:14px;padding:17px 0;border-bottom:1px solid var(--line);font-size:15px;font-weight:500}
+.story-point .icon{width:20px;height:20px;color:var(--amber)}
+
+/* =============================================================
+   8 · PROCESS
+   ============================================================= */
+.process{background:var(--paper)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:clamp(20px,2.5vw,36px);counter-reset:s}
+.step{position:relative;padding-top:30px;border-top:1px solid var(--line-strong)}
+.step::before{
+  counter-increment:s;content:"0" counter(s);
+  position:absolute;top:-1px;left:0;padding-right:14px;
+  translate:0 -50%;background:var(--paper);
+  font:600 13px/1 'DM Sans',sans-serif;color:var(--amber);letter-spacing:.14em;
+}
+.step h3{font-family:'Abhaya Libre',Georgia,serif;font-size:21px;font-weight:700;margin-bottom:9px}
+.step p{color:var(--ink-soft);font-size:14.5px;line-height:1.75}
+
+/* =============================================================
+   9 · CONTACT + FOOTER
+   ============================================================= */
+.contact{background:var(--deep);color:var(--on-deep);padding-block:clamp(64px,7vw,104px)}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,72px);align-items:center}
+.contact .label{color:var(--gold)}
+.contact h2{font-size:clamp(28px,3.4vw,46px);margin-block:14px 16px}
+.contact p{color:var(--on-deep-soft);font-size:16px;max-width:50ch}
+.contact-actions{display:grid;gap:12px}
+.contact-actions .wa-btn{width:100%;justify-content:flex-start;padding-inline:26px;min-height:62px;font-size:16px}
+.contact-actions .wa-btn .num{margin-left:auto;opacity:.85;font-size:14px}
+
+.footer{background:var(--deep);color:var(--on-deep-soft);border-top:1px solid var(--deep-line);padding-block:40px 32px;font-size:14px}
+.footer-top{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:28px;border-bottom:1px solid var(--deep-line)}
+.footer-brand{font-family:'Abhaya Libre',Georgia,serif;font-size:24px;font-weight:700;color:var(--on-deep)}
+.footer-nav{display:flex;gap:2px 28px;flex-wrap:wrap;margin-block:-9px}
+.footer-nav a{padding-block:9px;opacity:.8;transition:opacity .2s}
+.footer-nav a:hover{opacity:1;color:var(--gold)}
+.footer-bot{padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;opacity:.72}
+
+.float-wa{
+  position:fixed;right:22px;bottom:22px;z-index:30;
+  width:56px;height:56px;display:grid;place-items:center;border-radius:50%;
+  background:var(--wa);color:var(--on-wa);box-shadow:var(--sh-2);
+  transition:transform .25s var(--bezier),filter .2s;
+}
+.float-wa .icon{width:27px;height:27px}
+.float-wa:hover{transform:translateY(-3px) scale(1.05);filter:brightness(1.08)}
+
+/* =============================================================
+   10 · DRAWER
+   ============================================================= */
+/* visibility is STEPPED, never interpolated: a transitioned visibility still
+   reports `hidden` at t=0, which silently breaks .focus() on open. */
+.overlay{
+  position:fixed;inset:0;z-index:60;background:rgba(12,8,5,.62);backdrop-filter:blur(3px);
+  opacity:0;visibility:hidden;
+  transition:opacity .3s, visibility 0s linear .3s;
+}
+.overlay.open{opacity:1;visibility:visible;transition:opacity .3s, visibility 0s}
+.drawer{
+  position:fixed;z-index:61;top:0;right:0;width:min(470px,100%);height:100dvh;
+  display:flex;flex-direction:column;background:var(--paper);color:var(--ink);
+  box-shadow:-24px 0 70px rgba(0,0,0,.32);
+  translate:105% 0;visibility:hidden;
+  transition:translate .38s var(--bezier), visibility 0s linear .38s;
+}
+.drawer.open{translate:0 0;visibility:visible;transition:translate .38s var(--bezier), visibility 0s}
+.drawer-head{padding:22px 26px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.drawer-head h2{font-family:'Abhaya Libre',Georgia,serif;font-size:23px;font-weight:700}
+.x-btn{width:42px;height:42px;display:grid;place-items:center;flex:none;border:1px solid var(--line-strong);border-radius:var(--r-sm);background:transparent}
+.x-btn:hover{background:var(--surface-2)}
+.drawer-scroll{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:20px 26px 26px}
+.empty{padding:56px 12px;text-align:center;color:var(--ink-soft)}
+.empty .icon{width:38px;height:38px;margin:0 auto 16px;color:var(--line-strong)}
+.line{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.line strong{display:block;font-family:'Abhaya Libre',Georgia,serif;font-size:18px;font-weight:700}
+.line small{display:block;margin-top:3px;color:var(--ink-soft);font-size:13px;line-height:1.5}
+.del-btn{width:42px;height:42px;display:grid;place-items:center;border:1px solid transparent;border-radius:var(--r-sm);background:transparent;color:var(--ink-faint)}
+.del-btn:hover{background:var(--surface-2);color:var(--danger);border-color:var(--line)}
+
+.form{margin-top:26px;padding-top:24px;border-top:1px solid var(--line)}
+.form h3{font-family:'Abhaya Libre',Georgia,serif;font-size:19px;font-weight:700;margin-bottom:4px}
+.form > p{color:var(--ink-soft);font-size:13.5px;margin-bottom:4px}
+.field{margin-top:16px}
+.field label{display:block;margin-bottom:7px;font-size:14px;font-weight:500}
+.req{color:var(--danger)}
+.form input,.form textarea,.form select{
+  width:100%;padding:14px 15px;border:1px solid var(--line-strong);border-radius:var(--r-sm);
+  background:var(--surface);color:var(--ink);font-size:16px;line-height:1.5;
+}
+.form input::placeholder,.form textarea::placeholder{color:var(--ink-faint)}
+.form input:focus-visible,.form textarea:focus-visible,.form select:focus-visible{outline:2px solid var(--ring);outline-offset:1px;border-color:var(--amber-vivid)}
+.form textarea{min-height:84px;resize:vertical}
+.form [aria-invalid="true"]{border-color:var(--danger)}
+.err{display:none;margin-top:6px;color:var(--danger);font-size:13px;font-weight:500}
+.err.show{display:block}
+.drawer-foot{padding:18px 26px 22px;border-top:1px solid var(--line);background:var(--paper)}
+.total-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;font-size:15px}
+.total-row strong{font-family:'Abhaya Libre',Georgia,serif;font-size:22px;font-weight:700}
+.total-row[hidden]{display:none}
+.send-btn{
+  width:100%;min-height:56px;display:inline-flex;align-items:center;justify-content:center;gap:11px;
+  border:0;border-radius:var(--r-sm);background:var(--wa);color:var(--on-wa);font-size:16px;font-weight:600;
+  transition:filter .22s;
+}
+.send-btn:hover{filter:brightness(1.08)}
+.send-btn:disabled{background:var(--surface-2);color:var(--ink-faint);cursor:not-allowed;filter:none}
+.note{margin-top:12px;color:var(--ink-soft);font-size:12.5px;line-height:1.65}
+
+.toast{
+  position:fixed;left:50%;bottom:28px;z-index:70;translate:-50% 150%;
+  display:flex;align-items:center;gap:11px;padding:15px 24px;border-radius:99px;
+  background:var(--ink);color:var(--paper);box-shadow:var(--sh-3);
+  font-size:14.5px;font-weight:500;
+  transition:translate .42s var(--bezier);
+}
+.toast.show{translate:-50% 0}
+.toast .icon{color:var(--gold);width:19px;height:19px}
+
+/* =============================================================
+   11 · MOTION
+   ============================================================= */
+.reveal{opacity:0;translate:0 26px;transition:opacity .85s var(--bezier),translate .85s var(--bezier)}
+.reveal.in{opacity:1;translate:0 0}
+.card.reveal:nth-child(2){transition-delay:.08s}
+.card.reveal:nth-child(3){transition-delay:.16s}
+.card.reveal:nth-child(4){transition-delay:.24s}
+.hidden{display:none !important}
+
+/* =============================================================
+   12 · RESPONSIVE
+   ============================================================= */
+@media (max-width:1080px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero-copy{max-width:none}
+  .hero-figure{order:-1;padding:0;max-width:620px}
+  .hero-figure::before{display:none}
+  .story-grid{grid-template-columns:1fr;gap:64px}
+  .story-art{max-width:560px}
+  .contact-grid{grid-template-columns:1fr;gap:36px}
+}
+@media (max-width:880px){
+  :root{--header-h:70px}
+  .nav-links{
+    display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    align-items:stretch;gap:0;padding:8px 20px 20px;
+    background:var(--paper);color:var(--ink);
+    border-bottom:1px solid var(--line);box-shadow:var(--sh-2);font-size:17px;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:16px 2px;border-bottom:1px solid var(--line);opacity:1}
+  .nav-links a:last-child{border-bottom:0}
+  .nav-links a::after{display:none}
+  .menu-btn{display:inline-flex}
+  .hbtn.solid,.brand-sub{display:none}
+  .trust-grid{grid-template-columns:1fr;padding-block:8px}
+  .trust-item{padding:20px 0;border-left:0 !important;border-top:1px solid var(--line)}
+  .trust-item:first-child{border-top:0}
+}
+@media (max-width:560px){
+  /* The header is the tightest row on the page: shrink the controls and let
+     the wordmark ellipsis rather than push the layout past the viewport. */
+  .brand{min-width:0}
+  .brand-text{min-width:0}
+  .brand-logo{width:40px;height:40px;flex-basis:40px}
+  .brand-name{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .nav-actions{gap:6px}
+  .hbtn{min-height:42px;padding-inline:12px}
+  .hbtn.square{width:42px}
+  #openCart{width:42px;padding:0;position:relative}
+  #openCart .cart-dot{position:absolute;top:-5px;right:-5px;min-width:19px;height:19px;font-size:10.5px}
+  #openCart .cart-dot[data-empty="true"]{display:none}
+  .hero h1{font-size:clamp(38px,11vw,56px)}
+  .hero-actions .btn{flex:1 1 100%}
+  .marquee-track span{font-size:18px;gap:30px}
+  .marquee-track{gap:30px}
+  .product-grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .card-body h3{font-size:19px}
+  .card-foot{flex-direction:column;align-items:stretch}
+  .add-btn,.stepper{justify-content:center}
+  .story-art{padding:0 0 32px}
+  .story-art::before{display:none}
+  .story-quote{position:static;max-width:none;margin-top:-26px;margin-inline:14px}
+  .story-quote .label{white-space:normal}
+  .callout{padding:24px}
+  .callout .wa-btn{width:100%}
+  .float-wa{right:16px;bottom:16px;width:52px;height:52px}
+  .footer-bot{flex-direction:column;gap:8px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .reveal{opacity:1 !important;translate:none !important}
+  .marquee-track{animation:none}
+}
+@media (forced-colors: active){
+  .card-media,.filter,.hbtn,.btn,.step{border:1px solid CanvasText}
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#products">අන්තර්ගතයට යන්න</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 7h12l1 13H5L6 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M4.3 4.3l1.6 1.6M18.1 18.1l1.6 1.6M2.6 12h2.2M19.2 12h2.2M4.3 19.7l1.6-1.6M18.1 5.9l1.6-1.6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4 8.5 8.5 0 1 0 20 14.2Z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path class="icon-solid" d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.42 1.32 4.9L2 22l5.4-1.42a9.9 9.9 0 0 0 4.64 1.18c5.44 0 9.84-4.4 9.84-9.84S17.48 2 12.04 2Zm5.76 13.9c-.24.68-1.4 1.3-1.94 1.38-.54.08-1.2.12-3.42-.86-2.6-1.14-4.24-3.9-4.38-4.08-.14-.2-1.04-1.4-1.04-2.68 0-1.28.66-1.9.9-2.16.24-.26.52-.32.7-.32l.5.01c.16 0 .38-.06.58.44.2.52.7 1.82.76 1.95.06.14.1.3.01.48-.1.18-.14.3-.28.46l-.42.48c-.14.14-.28.3-.12.58.16.28.72 1.2 1.54 1.94 1.06.94 1.94 1.24 2.22 1.38.28.14.44.12.6-.07.16-.2.68-.8.86-1.07.18-.28.36-.23.6-.14.25.09 1.56.74 1.83.87.27.14.45.2.52.32.07.11.07.66-.17 1.3Z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5.5 12h13"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.5 7h15M9.5 7V5h5v2M6.5 7l.9 12.5h9.2L17.5 7M10.5 11v5M13.5 11v5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5L19.5 7"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13 5.8l6.2 6.2L13 18.2"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-9.4A4.1 4.1 0 0 1 12 7.8a4.1 4.1 0 0 1 7.5 2.8C19.5 15.4 12 20 12 20Z"/></symbol>
+  <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3.5 11h17c0 4.7-3.8 8.5-8.5 8.5S3.5 15.7 3.5 11Z"/><path d="M8 11c0-2.2 1.8-4 4-4s4 1.8 4 4"/><path d="M12 7V4.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 12.5c0 4-3.8 7.2-8.5 7.2a9.8 9.8 0 0 1-2.6-.35L4.5 21l1.3-3.5a6.8 6.8 0 0 1-2.3-5c0-4 3.8-7.2 8.5-7.2s8.5 3.2 8.5 7.2Z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3.5l1.9 5.6 5.6 1.9-5.6 1.9L12 18.5l-1.9-5.6L4.5 11l5.6-1.9L12 3.5Z"/></symbol>
+</svg>
+
+<div class="announcement" id="announcement">
+  <span>නැවුම් රසයෙන් පිරුණු මොහොතක් — <b>නවරස Products</b> වෙතින් ♡</span>
+  <button class="ann-close" id="annClose" type="button" aria-label="මෙම දැනුම්දීම වසන්න">
+    <svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg>
+  </button>
+</div>
+
+<header class="site-header" id="header">
+  <div class="shell nav">
+    <a class="brand" href="#home" aria-label="නවරස Products මුල් පිටුව">
+      <img class="brand-logo" src="img/logo.webp" alt="" width="128" height="128" decoding="async">
+      <span class="brand-text">
+        <span class="brand-name">නවරස Products</span>
+        <span class="brand-sub label" lang="en">Made with love</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="ප්‍රධාන මෙනුව">
+      <a href="#home">මුල් පිටුව</a>
+      <a href="#products">නිෂ්පාදන</a>
+      <a href="#story">අප ගැන</a>
+      <a href="#order">ඇණවුම් කරන හැටි</a>
+      <a href="#contact">අප අමතන්න</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="hbtn square theme-btn" id="themeToggle" type="button" aria-label="අඳුරු තේමාවට මාරු වන්න">
+        <svg class="icon i-sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+        <svg class="icon i-moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+      </button>
+      <a class="hbtn solid" href="https://wa.me/94778077332" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-wa"></use></svg>WhatsApp
+      </a>
+      <button class="hbtn" id="openCart" type="button" aria-expanded="false" aria-controls="drawer">
+        <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg>
+        <span class="cart-dot" id="cartDot" data-empty="true">0</span>
+        <span class="vh">ඇණවුම් බෑගය විවෘත කරන්න</span>
+      </button>
+      <button class="hbtn square menu-btn" id="menuBtn" type="button" aria-label="මෙනුව" aria-expanded="false" aria-controls="navLinks">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="home">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow label" lang="en">Est. in Sri Lanka</p>
+        <h1 class="display">රසය මතක හිටින <em>මොහොතක්.</em></h1>
+        <p>වටලප්පන්, පුඩිං සහ සිසිල් අයිස් පැකට් — ඔබේ ආදරණීයයන් සමඟ බෙදාගන්න රසවත් සංග්‍රහ. අදම නවරස Products වෙතින් ඔබේ කැමැත්ත තෝරාගන්න.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#products">අපේ රස බලන්න <svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+          <button class="btn btn-ghost" id="heroOrder" type="button">
+            <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg>ඇණවුමක් කරන්න
+          </button>
+        </div>
+        <p class="hero-foot">
+          <svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg>
+          ඔබේ ඇණවුම WhatsApp හරහා පහසුවෙන් තහවුරු කරගන්න.
+        </p>
+      </div>
+      <figure class="hero-figure">
+        <img src="img/hero.webp" alt="නවරස Products අතුරුපස එකතුව — වටලප්පන්, ජෙලි පුඩිං සහ අයිස් පැකට්"
+             width="1080" height="720" fetchpriority="high" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marquee">
+      <span>වටලප්පන්</span><span>කැරමල් පුඩිං</span><span>ජෙලි පුඩිං</span><span>අයිස් පැකට්</span><span>ආදරයෙන් සකස් කළ</span>
+      <span>වටලප්පන්</span><span>කැරමල් පුඩිං</span><span>ජෙලි පුඩිං</span><span>අයිස් පැකට්</span><span>ආදරයෙන් සකස් කළ</span>
+    </div>
+  </div>
+
+  <section class="trust" aria-label="අපගේ සේවාව">
+    <div class="shell trust-grid">
+      <div class="trust-item">
+        <span class="trust-icon"><svg class="icon" aria-hidden="true"><use href="#i-bowl"></use></svg></span>
+        <div><strong>රසවත් තේරීම්</strong><span>ඔබේ කැමැත්තට විවිධ රස</span></div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon"><svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg></span>
+        <div><strong>ආදරයෙන් සකස් කරයි</strong><span>සතුට බෙදාගන්න පුංචි සංග්‍රහ</span></div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-icon"><svg class="icon" aria-hidden="true"><use href="#i-chat"></use></svg></span>
+        <div><strong>පහසු ඇණවුම්</strong><span>WhatsApp හරහා අප අමතන්න</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section products" id="products">
+    <div class="shell">
+      <div class="section-head reveal">
+        <p class="label" lang="en">The Collection</p>
+        <h2 class="display">ඔබේ ප්‍රියතම රසය තෝරන්න</h2>
+        <p>අපේ නිෂ්පාදන අතරින් ඔබ කැමති දේ ඇණවුම් බෑගයට එක් කර මිල සහ ලබාගැනීමේ විස්තර WhatsApp හරහා විමසන්න.</p>
+      </div>
+
+      <div class="filters" id="filters" role="group" aria-label="නිෂ්පාදන පෙරහන">
+        <button class="filter" data-filter="all" type="button" aria-pressed="true">සියල්ල</button>
+        <button class="filter" data-filter="pudding" type="button" aria-pressed="false">පුඩිං</button>
+        <button class="filter" data-filter="traditional" type="button" aria-pressed="false">සාම්ප්‍රදායික රස</button>
+        <button class="filter" data-filter="ice" type="button" aria-pressed="false">අයිස් පැකට්</button>
+      </div>
+      <p class="vh" role="status" aria-live="polite" id="filterStatus"></p>
+
+      <div class="product-grid" id="grid">
+        <article class="card reveal" data-category="traditional" data-id="watalappan">
+          <div class="card-media">
+            <img src="img/watalappan.webp" alt="වටලප්පන් — පොල් කිරි සහ හකුරු අතුරුපස" width="462" height="308" loading="lazy" decoding="async">
+            <span class="card-index num">01</span>
+            <span class="card-tag">සාම්ප්‍රදායික</span>
+          </div>
+          <div class="card-body">
+            <h3>වටලප්පන්</h3>
+            <p>පොල් කිරි සහ හකුරු රස මතක් කරවන අපේ සාම්ප්‍රදායික අතුරුපස.</p>
+            <div class="card-foot"><span class="price"></span><span class="slot"></span></div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-category="pudding" data-id="caramel">
+          <div class="card-media">
+            <img src="img/caramel.webp" alt="කැරමල් පුඩිං" width="540" height="360" loading="lazy" decoding="async">
+            <span class="card-index num">02</span>
+            <span class="card-tag">මෘදු රසය</span>
+          </div>
+          <div class="card-body">
+            <h3>කැරමල් පුඩිං</h3>
+            <p>මෘදු ගතියත් කැරමල් රසත් එකට එක් වූ රසවත් පුඩිං.</p>
+            <div class="card-foot"><span class="price"></span><span class="slot"></span></div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-category="pudding" data-id="jelly">
+          <div class="card-media">
+            <img src="img/jelly.webp" alt="ජෙලි පුඩිං" width="640" height="427" loading="lazy" decoding="async">
+            <span class="card-index num">03</span>
+            <span class="card-tag">වර්ණවත්</span>
+          </div>
+          <div class="card-body">
+            <h3>ජෙලි පුඩිං</h3>
+            <p>වර්ණවත් පෙනුමක් සහ රසවත් බවක් එක් කළ සිසිල් අතුරුපස.</p>
+            <div class="card-foot"><span class="price"></span><span class="slot"></span></div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-category="ice" data-id="ice">
+          <div class="card-media">
+            <img src="img/ice.webp" alt="අයිස් පැකට්" width="640" height="427" loading="lazy" decoding="async">
+            <span class="card-index num">04</span>
+            <span class="card-tag">සිසිල්</span>
+          </div>
+          <div class="card-body">
+            <h3>අයිස් පැකට්</h3>
+            <p>උණුසුම් දවසක සිසිල් සතුටක් ගෙනෙන රසවත් තේරීම.</p>
+            <div class="card-foot"><span class="price"></span><span class="slot"></span></div>
+          </div>
+        </article>
+      </div>
+
+      <p class="no-results" id="noResults">මෙම කාණ්ඩයේ නිෂ්පාදන නොමැත. <button class="add-btn" type="button" data-filter="all">සියල්ල බලන්න</button></p>
+
+      <div class="callout reveal">
+        <div>
+          <h3>විශේෂ ඇණවුමක් ගැන විමසන්න</h3>
+          <p>ප්‍රමාණ, මිල, ලබාගත හැකි දිනය සහ වෙනත් විස්තර අපෙන් කෙළින්ම අහන්න.</p>
+        </div>
+        <a class="wa-btn" href="https://wa.me/94778077332" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-wa"></use></svg>WhatsApp හරහා විමසන්න
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section story" id="story">
+    <div class="shell story-grid">
+      <div class="story-art reveal">
+        <img src="img/jelly.webp" alt="නවරස Products අතුරුපස සංග්‍රහයක්" width="640" height="427" loading="lazy" decoding="async">
+        <blockquote class="story-quote">
+          <p class="label" lang="en">Nawarasa Products</p>
+          <p>රසවත් මොහොතක් ඔබේ ආදරණීයයන් සමඟ බෙදාගන්න.</p>
+        </blockquote>
+      </div>
+      <div class="story-copy reveal">
+        <p class="label" style="color:var(--amber)" lang="en">A little about us</p>
+        <h2 class="display">රසයක් පමණක් නොව, මතකයක් බෙදාගමු.</h2>
+        <p>නවරස Products වෙතින් ඔබට සමීප කරන්නේ රසවත් අතුරුපස සහ සිසිල් සංග්‍රහයන්. පවුලේ එකතුවකට, පුංචි සැමරුමකට හෝ ඔබේ දවසට රසවත් විරාමයකට අපේ නිෂ්පාදන තෝරාගන්න.</p>
+        <p>ඔබේ ඇණවුමට පෙර නිෂ්පාදන ලබාගත හැකි බව, ප්‍රමාණ සහ මිල ගණන් WhatsApp හරහා තහවුරු කරගන්න.</p>
+        <div class="story-points">
+          <div class="story-point"><svg class="icon" aria-hidden="true"><use href="#i-heart"></use></svg>ආදරයෙන් තෝරාගත් රසයන්</div>
+          <div class="story-point"><svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg>පහසු WhatsApp ඇණවුම්</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process" id="order">
+    <div class="shell">
+      <div class="section-head center reveal">
+        <p class="label" lang="en">How to order</p>
+        <h2 class="display">ඇණවුමක් කරන්න පහසු පියවර තුනයි</h2>
+        <p>ඔබේ කැමති නිෂ්පාදන තෝරාගෙන විස්තර අපට යවන්න.</p>
+      </div>
+      <div class="steps">
+        <article class="step reveal"><h3>නිෂ්පාදනය තෝරන්න</h3><p>ඔබ කැමති නිෂ්පාදන ඇණවුම් බෑගයට එක් කර අවශ්‍ය ප්‍රමාණය සකස් කරන්න.</p></article>
+        <article class="step reveal"><h3>ඔබේ විස්තර පුරවන්න</h3><p>නම, දුරකථන අංකය සහ ඔබේ ප්‍රදේශය ඇතුළත් කරන්න.</p></article>
+        <article class="step reveal"><h3>WhatsApp හරහා යවන්න</h3><p>ඔබ කැමති WhatsApp අංකයට ඇණවුම යවා මිල සහ ලබාගැනීම තහවුරු කරගන්න.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="shell contact-grid">
+      <div>
+        <p class="label" lang="en">Let's talk</p>
+        <h2 class="display">ඔබේ රසවත් ඇණවුමට අප සූදානම්!</h2>
+        <p>මිල, ප්‍රමාණ සහ ඇණවුම් විස්තර දැනගන්න පහත අංකයකට WhatsApp පණිවිඩයක් එවන්න.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="wa-btn" href="https://wa.me/94778077332" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-wa"></use></svg>WhatsApp <span class="num" dir="ltr">077 807 7332</span>
+        </a>
+        <a class="wa-btn alt" href="https://wa.me/94761105232" target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-wa"></use></svg>WhatsApp <span class="num" dir="ltr">076 110 5232</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-top">
+      <p class="footer-brand">නවරස Products</p>
+      <nav class="footer-nav" aria-label="පාදක සබැඳි">
+        <a href="#home">මුල් පිටුව</a><a href="#products">නිෂ්පාදන</a><a href="#story">අප ගැන</a><a href="#contact">අප අමතන්න</a>
+      </nav>
+    </div>
+    <div class="footer-bot">
+      <p>© <span id="year">2026</span> නවරස Products. සියලුම හිමිකම් ඇවිරිණි.</p>
+      <p>ඇණවුම් WhatsApp හරහා පමණි · online payment නොමැත</p>
+    </div>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/94778077332" target="_blank" rel="noopener" aria-label="WhatsApp හරහා අප අමතන්න">
+  <svg class="icon" aria-hidden="true"><use href="#i-wa"></use></svg>
+</a>
+
+<div class="overlay" id="overlay" hidden></div>
+
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
+  <div class="drawer-head">
+    <h2 id="drawerTitle" class="display">ඔබේ ඇණවුම</h2>
+    <button class="x-btn" id="closeCart" type="button" aria-label="ඇණවුම් බෑගය වසන්න">
+      <svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg>
+    </button>
+  </div>
+
+  <div class="drawer-scroll">
+    <div id="items"></div>
+
+    <form class="form" id="orderForm" novalidate>
+      <h3>ඔබේ විස්තර</h3>
+      <p>WhatsApp පණිවිඩයට මේ විස්තර ඇතුළත් වේ.</p>
+
+      <div class="field">
+        <label for="cName">ඔබේ නම <span class="req" aria-hidden="true">*</span></label>
+        <input id="cName" name="cName" required maxlength="70" autocomplete="name" placeholder="නම ඇතුළත් කරන්න" aria-describedby="eName">
+        <p class="err" id="eName">කරුණාකර ඔබේ නම ඇතුළත් කරන්න.</p>
+      </div>
+      <div class="field">
+        <label for="cPhone">දුරකථන අංකය</label>
+        <input id="cPhone" name="cPhone" type="tel" inputmode="tel" maxlength="20" autocomplete="tel" dir="ltr" placeholder="07X XXX XXXX">
+      </div>
+      <div class="field">
+        <label for="cArea">ප්‍රදේශය / නගරය <span class="req" aria-hidden="true">*</span></label>
+        <input id="cArea" name="cArea" required maxlength="100" autocomplete="address-level2" placeholder="ඔබ සිටින ප්‍රදේශය" aria-describedby="eArea">
+        <p class="err" id="eArea">කරුණාකර ඔබේ ප්‍රදේශය ඇතුළත් කරන්න.</p>
+      </div>
+      <div class="field">
+        <label for="cTarget">WhatsApp අංකය තෝරන්න</label>
+        <select id="cTarget" name="cTarget">
+          <option value="94778077332">077 807 7332</option>
+          <option value="94761105232">076 110 5232</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="cNotes">අමතර විස්තර</label>
+        <textarea id="cNotes" name="cNotes" maxlength="500" placeholder="ප්‍රමාණය, අවශ්‍ය දිනය හෝ වෙනත් විස්තර..."></textarea>
+      </div>
+    </form>
+  </div>
+
+  <div class="drawer-foot">
+    <p class="total-row" id="totalRow" hidden><span>එකතුව</span><strong id="totalValue"></strong></p>
+    <button class="send-btn" type="submit" form="orderForm" id="sendBtn" disabled>
+      <svg class="icon" aria-hidden="true"><use href="#i-wa"></use></svg>WhatsApp හරහා ඇණවුම යවන්න
+    </button>
+    <p class="note">මිල, ලබාගත හැකි බව සහ delivery / pickup විස්තර WhatsApp හරහා තහවුරු කරනු ලැබේ. මෙම වෙබ් අඩවියේ online payment පහසුකමක් නොමැත.</p>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span id="toastText"></span>
+</div>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FoodEstablishment","@id":"https://nawarasa.pages.dev/#business",
+"name":"නවරස Products","alternateName":"Nawarasa Products",
+"description":"ආදරයෙන් සකස් කළ වටලප්පන්, පුඩිං සහ අයිස් පැකට්.",
+"url":"https://nawarasa.pages.dev/","image":"https://nawarasa.pages.dev/og.jpg",
+"telephone":"+94778077332","servesCuisine":"Sri Lankan desserts","priceRange":"$",
+"address":{"@type":"PostalAddress","addressCountry":"LK"},
+"hasMenu":{"@type":"Menu","hasMenuSection":{"@type":"MenuSection","name":"අතුරුපස","hasMenuItem":[
+{"@type":"MenuItem","name":"වටලප්පන්","description":"පොල් කිරි සහ හකුරු රස සාම්ප්‍රදායික අතුරුපස."},
+{"@type":"MenuItem","name":"කැරමල් පුඩිං","description":"මෘදු කැරමල් රසැති පුඩිං."},
+{"@type":"MenuItem","name":"ජෙලි පුඩිං","description":"වර්ණවත් සිසිල් අතුරුපස."},
+{"@type":"MenuItem","name":"අයිස් පැකට්","description":"සිසිල් අයිස් පැකට්."}]}}}
+</script>
+
+<script>
+(() => {
+  "use strict";
+  const $ = id => document.getElementById(id);
+
+  /* ---------------------------------------------------------------
+     PRICES — put a number (rupees) in `price` and it appears on the
+     card, adds line maths in the bag and a total in the WhatsApp
+     message. Leave it null and the card keeps saying "මිල විමසන්න".
+         e.g.  watalappan:{ ..., price:350 }
+     --------------------------------------------------------------- */
+  const PRODUCTS = {
+    watalappan:{ name:"වටලප්පන්",     category:"සාම්ප්‍රදායික රස", price:null },
+    caramel:   { name:"කැරමල් පුඩිං", category:"පුඩිං",            price:null },
+    jelly:     { name:"ජෙලි පුඩිං",   category:"පුඩිං",            price:null },
+    ice:       { name:"අයිස් පැකට්",  category:"අයිස් පැකට්",      price:null }
+  };
+  const ASK = "මිල විමසන්න";
+  const lkr = n => "රු. " + n.toLocaleString("en-LK");
+  const total = () => [...cart].reduce((s,[id,q]) => PRODUCTS[id].price == null ? s : s + PRODUCTS[id].price*q, 0);
+  const allPriced = () => cart.size > 0 && [...cart.keys()].every(id => PRODUCTS[id].price != null);
+
+  const K_CART = "nawarasa-cart", K_THEME = "nawarasa-theme", K_NOTE = "nawarasa-notice";
+  const store = {
+    get(k){ try{ return localStorage.getItem(k); }catch{ return null; } },
+    set(k,v){ try{ localStorage.setItem(k,v); }catch{} },
+    del(k){ try{ localStorage.removeItem(k); }catch{} }
+  };
+
+  /* ---------- Theme ---------- */
+  const root = document.documentElement;
+  const meta = $("metaThemeColor"), tBtn = $("themeToggle");
+  const sysDark = matchMedia("(prefers-color-scheme: dark)");
+  const isDark = () => { const c = root.getAttribute("data-theme"); return c ? c === "dark" : sysDark.matches; };
+  const syncTheme = () => {
+    const d = isDark();
+    if (meta) meta.setAttribute("content", d ? "#15110e" : "#faf6ef");
+    tBtn.setAttribute("aria-label", d ? "දීප්ත තේමාවට මාරු වන්න" : "අඳුරු තේමාවට මාරු වන්න");
+    tBtn.title = d ? "Light mode" : "Dark mode";
+  };
+  tBtn.addEventListener("click", () => {
+    const next = isDark() ? "light" : "dark";
+    if ((next === "dark") === sysDark.matches){ root.removeAttribute("data-theme"); store.del(K_THEME); }
+    else { root.setAttribute("data-theme", next); store.set(K_THEME, next); }
+    syncTheme();
+  });
+  sysDark.addEventListener("change", syncTheme);
+  syncTheme();
+
+  /* ---------- Announcement ---------- */
+  const ann = $("announcement");
+  if (store.get(K_NOTE) === "closed") ann.hidden = true;
+  $("annClose").addEventListener("click", () => { ann.hidden = true; store.set(K_NOTE, "closed"); });
+
+  /* ---------- Header state ---------- */
+  const header = $("header");
+  const onScroll = () => header.classList.toggle("is-stuck", window.scrollY > 24);
+  addEventListener("scroll", onScroll, { passive:true });
+  onScroll();
+
+  /* ---------- Scroll lock ---------- */
+  let locks = 0;
+  const lock = () => { if (++locks === 1) root.classList.add("is-locked"); };
+  const unlock = () => { if (locks > 0 && --locks === 0) root.classList.remove("is-locked"); };
+
+  /* ---------- Toast ---------- */
+  const toast = $("toast"), toastText = $("toastText");
+  let tTimer;
+  const say = msg => {
+    toastText.textContent = msg;
+    toast.classList.add("show");
+    clearTimeout(tTimer);
+    tTimer = setTimeout(() => toast.classList.remove("show"), 2300);
+  };
+
+  /* ---------- Cart ---------- */
+  let cart = new Map();
+  try {
+    for (const [id, q] of Object.entries(JSON.parse(store.get(K_CART) || "{}"))){
+      const n = Math.min(99, Math.max(0, parseInt(q,10) || 0));
+      if (PRODUCTS[id] && n > 0) cart.set(id, n);
+    }
+  } catch {}
+  const persist = () => store.set(K_CART, JSON.stringify(Object.fromEntries(cart)));
+  function setQty(id, q){
+    if (!PRODUCTS[id]) return;
+    if (q <= 0) cart.delete(id); else cart.set(id, Math.min(99, q));
+    persist(); render();
+  }
+
+  const items = $("items"), dot = $("cartDot"), sendBtn = $("sendBtn");
+  const totalRow = $("totalRow"), totalValue = $("totalValue");
+
+  function stepper(id, qty){
+    const w = document.createElement("div");
+    w.className = "stepper";
+    const mk = (icon, label, d) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-label", `${PRODUCTS[id].name} ${label}`);
+      b.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#${icon}"></use></svg>`;
+      b.addEventListener("click", () => setQty(id, (cart.get(id) || 0) + d));
+      return b;
+    };
+    const o = document.createElement("output");
+    o.textContent = qty;
+    w.append(mk("i-minus","අඩු කරන්න",-1), o, mk("i-plus","වැඩි කරන්න",1));
+    return w;
+  }
+
+  function renderCards(){
+    document.querySelectorAll(".card").forEach(card => {
+      const id = card.dataset.id, p = PRODUCTS[id], qty = cart.get(id) || 0;
+      const priceEl = card.querySelector(".price");
+      priceEl.textContent = p.price == null ? ASK : lkr(p.price);
+      priceEl.dataset.ask = String(p.price == null);
+
+      const slot = card.querySelector(".slot");
+      slot.replaceChildren();
+      if (qty > 0){ slot.append(stepper(id, qty)); return; }
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "add-btn";
+      b.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>එක් කරන්න`;
+      b.setAttribute("aria-label", `${p.name} ඇණවුමට එක් කරන්න`);
+      b.addEventListener("click", () => {
+        setQty(id, 1); say(`${p.name} එක් කළා`);
+        const next = card.querySelector(".stepper button:last-child");
+        if (next) next.focus();
+      });
+      slot.append(b);
+    });
+  }
+
+  function renderDrawer(){
+    const count = [...cart.values()].reduce((s,n) => s+n, 0);
+    dot.textContent = count;
+    dot.dataset.empty = String(count === 0);
+    sendBtn.disabled = count === 0;
+
+    const show = allPriced();
+    totalRow.hidden = !show;
+    if (show) totalValue.textContent = lkr(total());
+
+    items.replaceChildren();
+    if (cart.size === 0){
+      const e = document.createElement("p");
+      e.className = "empty";
+      e.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg>ඔබ තවම නිෂ්පාදන තෝරාගෙන නැහැ.`;
+      items.append(e);
+      return;
+    }
+    for (const [id, qty] of cart){
+      const p = PRODUCTS[id];
+      const row = document.createElement("div");
+      row.className = "line";
+
+      const info = document.createElement("div");
+      const t = document.createElement("strong"); t.textContent = p.name;
+      const m = document.createElement("small");
+      m.textContent = p.price == null
+        ? `${p.category} · මිල WhatsApp මගින් විමසන්න`
+        : `${lkr(p.price)} × ${qty} = ${lkr(p.price * qty)}`;
+      info.append(t, m);
+
+      const del = document.createElement("button");
+      del.type = "button"; del.className = "del-btn";
+      del.setAttribute("aria-label", `${p.name} ඉවත් කරන්න`);
+      del.innerHTML = `<svg class="icon" aria-hidden="true"><use href="#i-trash"></use></svg>`;
+      del.addEventListener("click", () => { setQty(id, 0); say(`${p.name} ඉවත් කළා`); });
+
+      row.append(info, stepper(id, qty), del);
+      items.append(row);
+    }
+  }
+  const render = () => { renderCards(); renderDrawer(); };
+
+  /* ---------- Drawer ---------- */
+  const drawer = $("drawer"), overlay = $("overlay"), openBtn = $("openCart");
+  let lastFocus = null;
+  const focusables = () => [...drawer.querySelectorAll('button:not([disabled]), a[href], input, select, textarea')];
+
+  function openCart(){
+    lastFocus = document.activeElement;
+    overlay.hidden = false;
+    requestAnimationFrame(() => overlay.classList.add("open"));
+    drawer.classList.add("open");
+    drawer.setAttribute("aria-hidden","false");
+    openBtn.setAttribute("aria-expanded","true");
+    lock();
+    // The drawer is visibility:hidden until .open lands, and focus() is a
+    // no-op on a hidden element. requestAnimationFrame is NOT enough — its
+    // callback runs before style recalc. Force a synchronous flush instead.
+    void drawer.offsetHeight;
+    $("closeCart").focus();
+  }
+  function closeCart(){
+    drawer.classList.remove("open");
+    overlay.classList.remove("open");
+    drawer.setAttribute("aria-hidden","true");
+    openBtn.setAttribute("aria-expanded","false");
+    unlock();
+    setTimeout(() => { overlay.hidden = true; }, 400);
+    if (lastFocus && lastFocus.isConnected) lastFocus.focus();
+  }
+  openBtn.addEventListener("click", openCart);
+  $("heroOrder").addEventListener("click", openCart);
+  $("closeCart").addEventListener("click", closeCart);
+  overlay.addEventListener("click", closeCart);
+  drawer.addEventListener("keydown", e => {
+    if (e.key !== "Tab") return;
+    const l = focusables(); if (!l.length) return;
+    const first = l[0], last = l[l.length-1];
+    if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  });
+
+  /* ---------- Mobile nav ---------- */
+  const nav = $("navLinks"), menuBtn = $("menuBtn");
+  const setNav = open => { nav.classList.toggle("open", open); menuBtn.setAttribute("aria-expanded", String(open)); };
+  menuBtn.addEventListener("click", () => setNav(!nav.classList.contains("open")));
+  nav.addEventListener("click", e => { if (e.target.closest("a")) setNav(false); });
+  document.addEventListener("click", e => {
+    if (nav.classList.contains("open") && !e.target.closest("#navLinks, #menuBtn")) setNav(false);
+  });
+  document.addEventListener("keydown", e => {
+    if (e.key !== "Escape") return;
+    if (drawer.classList.contains("open")) closeCart();
+    else if (nav.classList.contains("open")){ setNav(false); menuBtn.focus(); }
+  });
+
+  /* ---------- Filters ---------- */
+  const fStatus = $("filterStatus"), noRes = $("noResults");
+  function applyFilter(v){
+    document.querySelectorAll(".filter").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.filter === v)));
+    let shown = 0;
+    document.querySelectorAll(".card").forEach(c => {
+      const ok = v === "all" || c.dataset.category === v;
+      c.classList.toggle("hidden", !ok);
+      if (ok) shown++;
+    });
+    noRes.classList.toggle("show", shown === 0);
+    fStatus.textContent = `නිෂ්පාදන ${shown}ක් පෙන්වයි.`;
+  }
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-filter]");
+    if (b) applyFilter(b.dataset.filter);
+  });
+
+  /* ---------- Form ---------- */
+  const form = $("orderForm");
+  const mark = (input, errId, bad) => { input.setAttribute("aria-invalid", String(bad)); $(errId).classList.toggle("show", bad); };
+  [["cName","eName"],["cArea","eArea"]].forEach(([i,e]) =>
+    $(i).addEventListener("input", () => { if ($(i).value.trim()) mark($(i), e, false); }));
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    if (cart.size === 0){ say("කරුණාකර මුලින් නිෂ්පාදනයක් තෝරන්න."); return; }
+    const name = $("cName"), area = $("cArea");
+    const nb = !name.value.trim(), ab = !area.value.trim();
+    mark(name,"eName",nb); mark(area,"eArea",ab);
+    if (nb || ab){ (nb ? name : area).focus(); return; }
+
+    const phone = $("cPhone").value.trim(), notes = $("cNotes").value.trim(), to = $("cTarget").value;
+    const lines = [
+      "ආයුබෝවන් නවරස Products!",
+      "මට පහත නිෂ්පාදන ඇණවුම් කිරීමට අවශ්‍යයි:",
+      "",
+      ...[...cart].map(([id,q]) => {
+        const p = PRODUCTS[id];
+        return p.price == null ? `• ${p.name} — ${q}`
+                               : `• ${p.name} — ${q} × ${lkr(p.price)} = ${lkr(p.price*q)}`;
+      }),
+      ...(allPriced() ? ["", `එකතුව: ${lkr(total())}`] : []),
+      "",
+      `නම: ${name.value.trim()}`,
+      `දුරකථන අංකය: ${phone || "සඳහන් කර නැත"}`,
+      `ප්‍රදේශය: ${area.value.trim()}`,
+      `අමතර විස්තර: ${notes || "නැත"}`,
+      "",
+      "කරුණාකර මිල සහ ලබාගැනීමේ විස්තර දන්වන්න. ස්තූතියි!"
+    ];
+    const url = `https://wa.me/${to}?text=${encodeURIComponent(lines.join("\n"))}`;
+    if (!window.open(url, "_blank", "noopener,noreferrer")) location.href = url;
+  });
+
+  /* ---------- Scroll-spy ---------- */
+  const navMap = new Map([...nav.querySelectorAll("a")].map(a => [a.hash.slice(1), a]));
+  const sections = [...document.querySelectorAll("main section[id]")];
+  if ("IntersectionObserver" in window && sections.length){
+    const spy = new IntersectionObserver(es => es.forEach(en => {
+      const link = navMap.get(en.target.id);
+      if (link && en.isIntersecting){
+        navMap.forEach(a => a.removeAttribute("aria-current"));
+        link.setAttribute("aria-current","true");
+      }
+    }), { rootMargin:"-45% 0px -50% 0px" });
+    sections.forEach(s => spy.observe(s));
+  }
+
+  /* ---------- Reveal ---------- */
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+  const targets = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && !reduce.matches){
+    const obs = new IntersectionObserver(es => es.forEach(en => {
+      if (en.isIntersecting){ en.target.classList.add("in"); obs.unobserve(en.target); }
+    }), { threshold:.08, rootMargin:"0px 0px -50px 0px" });
+    targets.forEach(el => obs.observe(el));
+  } else {
+    targets.forEach(el => el.classList.add("in"));
+  }
+
+  /* ---------- Init ---------- */
+  $("year").textContent = new Date().getFullYear();
+  applyFilter("all");
+  render();
+})();
+</script>
+</body>
+</html>
